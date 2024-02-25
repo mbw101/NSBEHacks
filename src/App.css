@@ -54,7 +54,7 @@
   justify-content: center;
 }
 
-.levelOne {
+.levelOne, .levelTwo {
   color: white;
 }
 

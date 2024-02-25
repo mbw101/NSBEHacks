@@ -88,7 +88,7 @@ export default function LevelOne(props) {
 
             <h1>Money Matters 101: Building a Strong Financial Foundation</h1>
 
-            <h2>Object:</h2>
+            <h2>Objective:</h2>
             <p className="answerOption">By the end of this lesson, students will be able to understand the basics of personal finance, including the concepts of saving, budgeting, and key financial goals.</p>
 
 
