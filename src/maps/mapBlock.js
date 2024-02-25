@@ -7,7 +7,7 @@ const blockTitles = ["Finance Introduction", "Learn - Saving", "Learn - Budgetin
 const blockPagePaths = [levelOne];
 
 function MapBlock(props) {
-    const { blockName, restricted } = props;
+    const {x, y, blockName, restricted} = props;
     const [BlockName, setBlockName] = useState(0);
     const [Restricted, setRestricted] = useState(0);
 
@@ -31,12 +31,13 @@ function MapBlock(props) {
     }    
 
     return (
-        <div className="MapBlock">
+        <div className="MapBlock" >
         <header className="MapBlock-header">
         <button
          title = {blockNameSetter}
          disabled = {restrictionSetter}
          onClick={pageChange}
+         
         style={{ width: 300,
                  height: 180,
                  backgroundColor: "#16f385",
@@ -46,7 +47,10 @@ function MapBlock(props) {
                  color: "white",
                  fontSize: "25px",
                  fontWeight: "bold",
-                 fontFamily: "Monaco, monospace"
+                 fontFamily: "Monaco, monospace",
+                 position: 'absolute',
+                 left: `${x}px`,
+                 top: `${y}px`
                  }}
        >
        <Link to="levelPage" style={{color:"white",textDecoration:"none"}}>{blockName}</Link>
