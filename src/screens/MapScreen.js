@@ -35,9 +35,8 @@ export default function MapScreen(props) {
             {
                 showMap ?
                     <div className="test">
-                        <div className="MapScreen" >
-                        <MapBlock x="1200" y="100" blockName={"Finance Introduction"} restricted={false}/>
-                        <MapBlock x="800" y="300" blockName={"Learn - Saving"} restricted={true}/>
+                        <MapBlock x="1200" y="100" blockName={"Finance Introduction"} restricted={false} onClick={level1}/>
+                        <MapBlock x="800" y="300" blockName={"Learn - Saving"} restricted={true} onClick={level2}/>
                         <Line x0={1200} y0={200} x1={935} y1={200} borderColor='#353661' borderWidth={15}/>
                         <Line x0={950} y0={200} x1={950} y1={300} borderColor='#353661' borderWidth={15}/>
                         <MapBlock x="1200" y="500"  blockName={"Learn - Budgeting"} restricted={true}/>
