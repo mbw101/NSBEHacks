@@ -4,7 +4,7 @@ import './../App.css';
 import levelOne from './../screens/levelScreens/levelOne.js';
 
 const blockTitles = ["Finance Introduction", "Learn - Saving", "Learn - Budgeting", "Learn - Borrowing (Credit)", "Learn - Financial Literacy", , "Learn - Basic Investing", "Learn - Time Value", "Learn - Taxes", "Learn - Advanced Investing", "Learn - Retirement Planning"];
-const blockPagePaths = ["/"];
+const blockPagePaths = [levelOne];
 
 function MapBlock(props) {
     const { blockName, restricted } = props;
@@ -36,7 +36,7 @@ function MapBlock(props) {
         <button
          title = {blockNameSetter}
          disabled = {restrictionSetter}
-         onClick = {pageChange}
+         onClick={pageChange}
         style={{ width: 300,
                  height: 180,
                  backgroundColor: "#16f385",
@@ -44,11 +44,12 @@ function MapBlock(props) {
                  border: "15px solid #13AE5E",
                  //margin: "35px",
                  color: "white",
-                 fontSize: "20px",
-                 fontWeight: "bold"
+                 fontSize: "25px",
+                 fontWeight: "bold",
+                 fontFamily: "Monaco, monospace"
                  }}
        >
-       <Link to="home" style={{color:"white",textDecoration:"none"}}>{blockName}</Link>
+       <Link to="levelPage" style={{color:"white",textDecoration:"none"}}>{blockName}</Link>
        </button>   
        </header>
       </div>       
