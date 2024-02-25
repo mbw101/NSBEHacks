@@ -23,7 +23,7 @@ function App() {
             setLoggedIn(true)
           }}/>
       }
-      <Profile />
+      
     </div>
   );
 }
