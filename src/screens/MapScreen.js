@@ -29,10 +29,60 @@ export default function MapScreen(props) {
         setShowLevel2(false);
         setShowMap(true);
     }
+ 
+    var str = "asdasd" + "<br/>\n" + "asdad";
 
     // if either of the show levels are true, hide the map screen
     return (
         <div className="MapScreen">
+            {
+                        <Popup trigger=
+                        {<button style={{ 
+                             width: 155,
+                             height: 55,
+                             backgroundColor: "#13AE5E",
+                             borderRadius: 30,
+                             margin: "25px",
+                             color: "white",
+                             fontSize: "20px",
+                             fontFamily: "Monaco, monospace",
+                             fontWeight: "bold",
+                             position: 'absolute',
+                             left: 2620
+                         }}> User Report</button>} 
+                        modal nested>
+                            {
+                                close => (
+                                    <div className='modal'>
+                                        <div className='content' style={{
+                                            position: 'fixed',
+                                            top: 250,
+                                            left: 1200,
+                                            background: "#445492",
+                                            border: "10px solid #525D8C",
+                                            width: 500,
+                                            height: 800,
+                                            borderRadius: 30,
+                                            color: "white",
+                                            fontSize: "20px",
+                                            fontFamily: "Monaco, monospace",
+                                            textAlign: "center"
+                                        }}>
+                                          User Report <br></br><br></br><br></br><br></br>
+                                          Current Rank: 0 <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+                                          Begin your journey through the coinquest to climb the ranks! <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+                                          Once you've begun your quest check back here to see how you can improve.
+
+                                        </div>
+                                        <div>
+                                            <button onClick={() => close()}></button>
+                                        </div>
+                                    </div>
+                                )
+                            }
+                    </Popup>
+            }
+
             {
                 showMap ?
                     <div className="test">
