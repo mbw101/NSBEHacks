@@ -11,8 +11,12 @@ export default function LoginScreen(props) {
                 style={{ width: 200, height: 200 }}></img>
             {/* Piggybank */}
             {/* <p>Profile Questionnaire</p> */}
-            <input />
-            <input type="password" />
+            <label>
+                Email: <input />
+            </label>
+            <label>
+                Password: <input type="password"/>
+            </label>
             <button onClick={() => props.onClick()}>Login</button>
         </div>
     );
