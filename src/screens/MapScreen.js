@@ -8,7 +8,6 @@ export default function MapScreen(props) {
         <MapBlock blockName={"Finance Introduction"} restricted={false}/>
         <svg><line x1="150" y1="0" x2="150" y2="150" stroke="#142F9B" stroke-width="10"/></svg>
         <MapBlock blockName={"Learn - Saving"} restricted={true}/>
-
         </div>
     );
 }
