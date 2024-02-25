@@ -7,9 +7,9 @@ function changeBackground(color) {
   
   window.addEventListener("load", function() {changeBackground('#111e52')});
 
-  export default function LevelOne(props) {
+  export default function LevelTwo(props) {
     return (
-        <div className="levelOne">
+        <div className="levelTwo">
         <img
             src={logo}
             style={{ width: 527, height: 136, margin: "35px", marginTop: "400px" }}
