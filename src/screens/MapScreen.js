@@ -30,6 +30,7 @@ export default function MapScreen(props) {
         <Line x0={1100} y0={1780} x1={1750} y1={1780} borderColor='#353661' borderWidth={15}/>
         <Line x0={1350} y0={1780} x1={1350} y1={1880} borderColor='#353661' borderWidth={15}/>
         <Line x0={1750} y0={1780} x1={1750} y1={1880} borderColor='#353661' borderWidth={15}/>
+        <Line x0={1750} y0={2060} x1={1750} y1={2150} borderColor='#111e52' borderWidth={15}/>
         </div>
     );
 }
