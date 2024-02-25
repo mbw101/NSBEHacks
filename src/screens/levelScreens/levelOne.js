@@ -1,5 +1,6 @@
 import { React, useState } from 'react';
 import logo from '../../fullCoinQuestLogo.png';
+import './../../App.css';
 // import { QuestionGroup, Option, Question } from 'react-multiple-choice';
 
 const questions = [
@@ -49,15 +50,29 @@ export default function LevelOne(props) {
     const [question, setQuestion] = useState(questions[0]);
     const [showFinish, setShowFinish] = useState(false);
 
+    const getSelectedAnswer = () => {
+        return document.querySelector('input[name="question"]:checked').value;
+    }
+
     const advanceQuestion = () => {
         if (questionIndex >= questions.length - 1) {
             // hide buttons and options
             // show congratulations
-
             setShowFinish(true);
-
-
+            return;
         }
+        const selectedAnswer = getSelectedAnswer().toLowerCase();
+        const correctAnswer = correctAnswers[questionIndex].toLowerCase();
+        console.log(selectedAnswer);
+
+        if (selectedAnswer === correctAnswer) {
+            // they got it right
+            window.alert("Correct!");
+        }
+        else {
+            window.alert("Incorrect, the answer is " + correctAnswer);
+        }
+        
         setQuestionIndex(questionIndex + 1);
         setQuestion(questions[questionIndex]);
         // update answers
@@ -73,23 +88,24 @@ export default function LevelOne(props) {
 
             <h1>Money Matters 101: Building a Strong Financial Foundation</h1>
 
-            <h3>Object:</h3>
-            <p>By the end of this lesson, students will be able to understand the basics of personal finance, including the concepts of saving, budgeting, and key financial goals.</p>
+            <h2>Object:</h2>
+            <p className="answerOption">By the end of this lesson, students will be able to understand the basics of personal finance, including the concepts of saving, budgeting, and key financial goals.</p>
 
 
             {
                 showFinish ?
-                    <p>Congratulations!!!</p>
+                    <p className="answerOption">Congratulations!!!</p>
                     :
                     <div id="">
-                        <input type="radio" name="question" value={answers[questionIndex][0]} /> <p>{answers[questionIndex][0]}</p>
-                        <input type="radio" name="question" value={answers[questionIndex][1]} /> <p>{answers[questionIndex][1]}</p>
+                        <p className="answerOption">{questions[questionIndex]}</p>
+                        <input type="radio" name="question" value={answers[questionIndex][0]} checked={true}/> <p className="answerOption">{answers[questionIndex][0]}</p>
+                        <input type="radio" name="question" value={answers[questionIndex][1]} /> <p className="answerOption">{answers[questionIndex][1]}</p>
                         {
                             answers[questionIndex].length > 2
                                 ?
                                 <div id="options">
-                                    <input type="radio" name="question" value={answers[questionIndex][2]} /> <p>{answers[questionIndex][2]}</p>
-                                    <input type="radio" name="question" value={answers[questionIndex][3]} /> <p>{answers[questionIndex][3]}</p>
+                                    <input type="radio" name="question" value={answers[questionIndex][2]} /> <p className="answerOption">{answers[questionIndex][2]}</p>
+                                    <input type="radio" name="question" value={answers[questionIndex][3]} /> <p className="answerOption">{answers[questionIndex][3]}</p>
                                 </div>
                                 :
                                 null
