@@ -1,9 +1,10 @@
 import  { React, useState  }  from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import './../App.css';
+import levelOne from './../screens/levelScreens/levelOne.js';
 
 const blockTitles = ["Finance Introduction", "Learn - Saving", "Learn - Budgeting", "Learn - Borrowing (Credit)", "Learn - Financial Literacy", , "Learn - Basic Investing", "Learn - Time Value", "Learn - Taxes", "Learn - Advanced Investing", "Learn - Retirement Planning"];
-const blockPagePaths = [];
+const blockPagePaths = ["/"];
 
 function MapBlock(props) {
     const { blockName, restricted } = props;
@@ -46,7 +47,9 @@ function MapBlock(props) {
                  fontSize: "20px",
                  fontWeight: "bold"
                  }}
-       >{blockName}</button>   
+       >
+       <Link to="home" style={{color:"white",textDecoration:"none"}}>{blockName}</Link>
+       </button>   
        </header>
       </div>       
     );
