@@ -1,10 +1,51 @@
 import React, { useState } from 'react';
 import MapBlock from '../maps/mapBlock';
 import  { Line } from 'react-lineto';
+import Popup from 'reactjs-popup';
 
 export default function MapScreen(props) {
     return (
         <div className="MapScreen" >
+        
+        <Popup trigger=
+            {<button style={{ 
+                 width: 155,
+                 height: 55,
+                 backgroundColor: "#13AE5E",
+                 borderRadius: 30,
+                 margin: "25px",
+                 color: "white",
+                 fontSize: "20px",
+                 fontFamily: "Monaco, monospace",
+                 fontWeight: "bold",
+                 position: 'absolute',
+                 left: 2620
+             }}> User Report</button>} 
+            modal nested>
+                {
+                    close => (
+                        <div className='modal'>
+                            <div className='content' style={{
+                                position: 'fixed',
+                                top: 250,
+                                left: 1200,
+                                background: "white",
+                                width: 500,
+                                height: 800
+                            }}>
+                                User Report Content
+                            </div>
+                            <div>
+                                <button onClick=
+                                    {() => close()}>
+                                        Close modal
+                                </button>
+                            </div>
+                        </div>
+                    )
+                }
+        </Popup>
+        
         <MapBlock x="1200" y="100" blockName={"Finance Introduction"} restricted={false}/>
         <MapBlock x="800" y="300" blockName={"Learn - Saving"} restricted={true}/>
         <Line x0={1200} y0={200} x1={935} y1={200} borderColor='#353661' borderWidth={15}/>
@@ -34,15 +75,3 @@ export default function MapScreen(props) {
         </div>
     );
 }
-
-/*
-
-
-
-
-        
-
-
-
-        <svg><line style={{ position: 'absolute'}} x1="0" y1="100" x2="40" y2="100" stroke="#142F9B" stroke-width="10"/></svg>
-*/
