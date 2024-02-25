@@ -29,8 +29,6 @@ export default function MapScreen(props) {
         setShowLevel2(false);
         setShowMap(true);
     }
- 
-    var str = "asdasd" + "<br/>\n" + "asdad";
 
     // if either of the show levels are true, hide the map screen
     return (
