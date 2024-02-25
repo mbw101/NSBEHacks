@@ -2,6 +2,13 @@ import './App.css';
 import React, { useState } from 'react';
 import Profile from './screens/Profile'
 import LoginScreen from './screens/LoginScreen';
+import MapScreen from './screens/MapScreen';
+
+function changeBackground(color) {
+  document.body.style.background = color;
+}
+
+window.addEventListener("load", function() {changeBackground('#111e52')});
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -10,7 +17,7 @@ function App() {
     <div className="App">
       {
         loggedIn ?
-          <Profile />
+          <MapScreen />
           :
           <LoginScreen onClick={() => {
             setLoggedIn(true)
