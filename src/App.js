@@ -10,13 +10,13 @@ function App() {
     <div className="App">
       {
         loggedIn ?
-          null
+          <Profile />
           :
           <LoginScreen onClick={() => {
             setLoggedIn(true)
           }}/>
       }
-      <Profile />
+      
     </div>
   );
 }
